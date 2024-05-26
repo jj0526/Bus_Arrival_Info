@@ -239,36 +239,6 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-    private void RequestNearBus(String tmX, String tmY, String radius) {
-
-        busInfoStrings.clear();
-        nearBuses.clear();
-        Log.d("data", tmX+ tmY+ radius);
-        new Thread(() -> {
-            try {
-                String jsonData = DataLoader.apiRequest(tmX, tmY, radius);
-                nearBuses = DataLoader.ParseNearBus(jsonData);
-                for (NearBus nearBus : nearBuses) {
-                    busInfoStrings.add(nearBus.getStationNm());
-                }
-
-                Log.d("data", "busInfoStrings : "+busInfoStrings.toString());
-
-                runOnUiThread(() -> {
-                    adapter2.notifyDataSetChanged();
-                });
-            } catch (IOException e) {
-                Log.d("data", "RuntimeException");
-                throw new RuntimeException(e);
-            } catch (JSONException e) {
-                Log.d("data", "RuntimeException");
-                throw new RuntimeException(e);
-            }
-
-        }).start();
-    }
-
-
     public void nearBusGPS(String tmX, String tmY, String radius) throws IOException {
 
         nearBuses.clear();
