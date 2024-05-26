@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import kr.co.company.bus_arrival_info.model.BusInfo;
 import kr.co.company.bus_arrival_info.model.Station;
+import kr.co.company.bus_arrival_info.model.NearBus;
 
 public class DataLoader {
 
@@ -61,6 +62,28 @@ public class DataLoader {
         return sb.toString();
     }
 
+    public static String apiRequest(String tmX, String tmY, String radius) throws IOException {
+        URL url = GenUrl.generate(tmX, tmY, radius);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Content-type", "application/json");
+        BufferedReader rd;
+        if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+            rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        } else {
+            rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+        }
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = rd.readLine()) != null) {
+            sb.append(line);
+        }
+        rd.close();
+        conn.disconnect();
+        return sb.toString();
+    }
+
+
     public static ArrayList<Station> ParseStationJson(String jsonData) throws JSONException {
         ArrayList<Station> stations = new ArrayList<Station>();
         JSONObject obj = new JSONObject(jsonData);
@@ -102,5 +125,29 @@ public class DataLoader {
 
 
         return busInfos;
+    }
+
+    public static ArrayList<NearBus> ParseNearBus(String jsonData) throws JSONException {
+        ArrayList<NearBus> NearBuses = new ArrayList<NearBus>();
+
+        // TimerTask 테스트로 트래픽 초과
+        try {
+            JSONObject obj = new JSONObject(jsonData);
+            Log.d("JsonLog", obj.toString());
+            JSONObject msgBody = (JSONObject)obj.get("msgBody");
+            JSONArray itemList = (JSONArray)msgBody.get("itemList");
+            for (int i = 0; i < itemList.length(); i++) {
+                JSONObject temp = itemList.getJSONObject(i);
+                String arrmsg1= temp.getString("stationId");
+                String arrmsg2= temp.getString("stationNm");
+                NearBuses.add(new NearBus(arrmsg1, arrmsg2));
+
+            }
+        } catch (Exception e) {
+            Log.d("error", e.toString());
+        }
+
+
+        return NearBuses;
     }
 }

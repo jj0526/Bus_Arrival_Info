@@ -44,6 +44,12 @@
             android:layout_weight="1"
             android:onClick="renew"
             android:text="갱신" />
+        <Button
+            android:id="@+id/getGPS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GPS" />
 
     </LinearLayout>
 
