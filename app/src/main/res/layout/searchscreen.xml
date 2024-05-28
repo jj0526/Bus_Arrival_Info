@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <Button
+            android:id="@+id/goback"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="go back"
+            android:padding="8dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="버스 도착 정보 어플리케이션"
-        android:textSize="30dp"/>
+        android:text="Search bus stop"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/editStation"
@@ -26,6 +44,7 @@
         android:hint="버스번호 입력"/>
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -35,23 +54,21 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="search"
-            android:text="검색" />
-
-        <Button
-            android:id="@+id/renew"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="renew"
-            android:text="갱신" />
+            android:text="Search" />
         <Button
             android:id="@+id/getGPS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="GPS" />
+            android:onClick="toggleMapView"
+            android:text="get my GPS" />
 
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </FrameLayout>
 
     <ListView
         android:id="@+id/listview"
