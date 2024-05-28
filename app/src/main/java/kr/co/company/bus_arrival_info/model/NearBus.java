@@ -3,11 +3,15 @@ package kr.co.company.bus_arrival_info.model;
 public class NearBus {
     private String stationId;
     private String stationNm;
+    private String tmX;
+    private String tmY;
 
 
-    public NearBus(String arrmsg1, String arrmsg2) {
+    public NearBus(String arrmsg1, String arrmsg2, String tmX, String tmY) {
         this.stationId = arrmsg1;
         this.stationNm = arrmsg2;
+        this.tmX = tmX;
+        this.tmY = tmY;
     }
 
 
@@ -27,4 +31,19 @@ public class NearBus {
         this.stationNm = arrmsg2;
     }
 
+    public String getTmX() {
+        return tmX;
+    }
+
+    public void setTmX(String tmX) {
+        this.tmX = tmX;
+    }
+
+    public String getTmY() {
+        return tmY;
+    }
+
+    public void setTmY(String tmY) {
+        this.tmY = tmY;
+    }
 }

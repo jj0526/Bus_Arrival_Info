@@ -1,14 +1,11 @@
 package kr.co.company.bus_arrival_info.controller;
 import java.io.IOException;
 import java.net.URLEncoder;
-
-
 import java.net.URL;
-import java.net.URLEncoder;
 
 public class GenUrl {
-    private static String EncodingKey = "zblpVQX%2B75IpUWic%2BfeIY7TaV1DCNu8qOPWmVR2AUqYKrsB%2BNM6wYv1pjWczB0%2FK2TNlTq%2FOmaZ67dSEImlQeQ%3D%3D";
-    private static String DecodingKey = "zblpVQX+75IpUWic+feIY7TaV1DCNu8qOPWmVR2AUqYKrsB+NM6wYv1pjWczB0/K2TNlTq/OmaZ67dSEImlQeQ==";
+    private static String EncodingKey = "";
+    private static String DecodingKey = "";
 
     // 정류장 조회 URL Generate
     public static URL generate(String stSrch) throws IOException

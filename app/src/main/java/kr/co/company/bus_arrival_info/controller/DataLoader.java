@@ -8,7 +8,6 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -140,7 +139,10 @@ public class DataLoader {
                 JSONObject temp = itemList.getJSONObject(i);
                 String arrmsg1= temp.getString("stationId");
                 String arrmsg2= temp.getString("stationNm");
-                NearBuses.add(new NearBus(arrmsg1, arrmsg2));
+                String tmX = temp.getString("gpsX");
+                String tmY = temp.getString("gpsY");
+                Log.d("maps", "dataloader" +  tmX + tmY);
+                NearBuses.add(new NearBus(arrmsg1, arrmsg2, tmX, tmY));
 
             }
         } catch (Exception e) {
