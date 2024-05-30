@@ -3,8 +3,11 @@
 공공데이터를 활용한 버스 도착 정보 조회 안드로이드 어플리케이션입니다.
 
 ## 프로젝트 구조
-![use case diagram1](https://github.com/jj0526/Bus_Arrival_Info/assets/117873805/b968c11b-a728-4c2e-b758-020c2aeaee0a)
-![class diagram2](https://github.com/jj0526/Bus_Arrival_Info/assets/117873805/4025e6a8-5b5e-4bfd-85be-ff87b885903e)
+<Use Case diagram>
+![use case diagram1](https://github.com/jj0526/Bus_Arrival_Info/assets/117873805/5838b260-a108-457e-bed7-94387f3bbdc2)
+
+<Class diagram>
+![class diagram2](https://github.com/jj0526/Bus_Arrival_Info/assets/117873805/d84621fa-3652-4086-a499-e40b333aec0e)
 
 ## 주요 기능
 
