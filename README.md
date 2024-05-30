@@ -37,6 +37,10 @@
 ## **🖥️ Stack**
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white" height="22">
 
+## ✔️ Branches
+- main: implementation of the application
+- test: testing of the application (JUnit)
+
 ## ✔️ Git Commit Message Convention
 
 프로젝트의 커밋 메시지를 일관성 있고 명확하게 작성하기 위해 아래와 같은 구조로 커밋 메시지를 작성합니다. 이 Convention은 각각의 커밋이 어떤 작업을 수행하는지를 명확히 전달하여 협업과 버전 관리를 원활하게 합니다.
