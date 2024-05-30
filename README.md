@@ -29,8 +29,11 @@
 ## 👥 팀원 소개
 
 202135574 전시현 </br>
+
 201935116 임석현 </br>
+
 202035326 김태화 </br>
+
 201934219 김준희 </br>
 
 
@@ -39,6 +42,7 @@
 
 ## ✔️ Branches
 - main: implementation of the application
+
 - test: testing of the application (JUnit)
 
 ## ✔️ Git Commit Message Convention
